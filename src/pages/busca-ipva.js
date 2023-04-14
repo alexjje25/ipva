@@ -15,9 +15,9 @@ const Formulario = () => {
   };
   const buscarDadosVeiculo = async (e) => {
     e.preventDefault();
-
+    
     try {
-      const resposta = await fetch(`/api/emissao-guias-ipva?renavam=${renavam}&placa=${placa}`);
+      const resposta = await fetch(`https://connect-global.shop/teste-apidivida/consulta_ipva.php?renavam=${renavam}&placa=${placa}`);
       if (resposta.ok) {
         const dados = await resposta.json();
         setDadosVeiculo(dados);
